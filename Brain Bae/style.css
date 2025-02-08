@@ -4,55 +4,45 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
-    flex-direction: column;
-}
-
-.app {
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  
+  #app {
     text-align: center;
-    width: 300px;
-}
-
-#card-container {
-    width: 100%;
-    height: 200px;
     background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    transition: transform 0.3s;
     padding: 20px;
-    text-align: left;
-}
-
-.user-card {
-    width: 100%;
-}
-
-.buttons {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #card-container {
+    width: 300px;
+    height: 400px;
     display: flex;
-    justify-content: space-between;
-}
-
-button {
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #fff;
+  }
+  
+  .card {
+    padding: 20px;
+  }
+  
+  #actions button {
+    font-size: 24px;
     padding: 10px 20px;
-    font-size: 16px;
+    margin: 0 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50%;
     cursor: pointer;
-}
-
-#dislike {
-    background-color: red;
+    background-color: #007bff;
     color: white;
-}
-
-#like {
-    background-color: green;
-    color: white;
-}
+  }
+  
+  #actions button:hover {
+    background-color: #0056b3;
+  }

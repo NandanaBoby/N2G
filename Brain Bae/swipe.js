@@ -1,51 +1,45 @@
-import { fetchUsersFromFirebase } from "./firebase.js";
-document.addEventListener("DOMContentLoaded", () => {
-    const cardContainer = document.getElementById("card-container");
-    const likeBtn = document.getElementById("like");
-    const dislikeBtn = document.getElementById("dislike");
+import { db } from "./firebase.js";
 
-    let currentIndex = 0;
-    let users = [];
+let users = [];
+let currentUserIndex = 0;
 
-    function loadUsers(fetchedUsers) {
-        users = fetchedUsers;
-        console.log("Users loaded:", users); // Debugging
-        if (users.length > 0) {
-            showUser();
-        } else {
-            cardContainer.innerHTML = "<p>No users found!</p>";
-        }
-    }
+const fetchUsers = async () => {
+  const snapshot = await db.collection("users").get();
+  users = snapshot.docs.map((doc) => doc.data());
+  showUser();
+};
 
-    function showUser() {
-        if (currentIndex < users.length) {
-            const user = users[currentIndex];
-            console.log("Displaying User:", user); // Debugging
-            cardContainer.innerHTML = `
-                <div class="user-card">
-                    <p><strong>Name:</strong> ${user.Name}</p>
-                    <p><strong>Age:</strong> ${user.Age}</p>
-                    <p><strong>Skills:</strong> ${user.Skills ? user.Skills.join(", ") : "None"}</p>
-                    <p><strong>Expertise:</strong> ${user.Expertise || "None"}</p>
-                </div>
-            `;
-        } else {
-            cardContainer.innerHTML = "<p>No more users!</p>";
-        }
-    }
+const showUser = () => {
+  const cardContainer = document.getElementById("card-container");
+  if (currentUserIndex < users.length) {
+    const user = users[currentUserIndex];
+    cardContainer.innerHTML = `
+      <div class="card">
+        <h2>${user.name}</h2>
+        <p><strong>Skills:</strong> ${user.skills}</p>
+        <p><strong>Age:</strong> ${user.age}</p>
+        <p><strong>Expertise:</strong> ${user.expertise}</p>
+      </div>
+    `;
+  } else {
+    cardContainer.innerHTML = "<p>No more users to show.</p>";
+  }
+};
 
-    likeBtn.addEventListener("click", () => {
-        if (currentIndex < users.length) {
-            console.log(`Matched with: ${users[currentIndex].Name}`);
-        }
-        currentIndex++;
-        showUser();
-    });
-
-    dislikeBtn.addEventListener("click", () => {
-        currentIndex++;
-        showUser();
-    });
-
-    fetchUsersFromFirebase(loadUsers);
+document.getElementById("like").addEventListener("click", () => {
+  if (currentUserIndex < users.length) {
+    alert(`You liked ${users[currentUserIndex].name}`);
+    currentUserIndex++;
+    showUser();
+  }
 });
+
+document.getElementById("dislike").addEventListener("click", () => {
+  if (currentUserIndex < users.length) {
+    alert(`You disliked ${users[currentUserIndex].name}`);
+    currentUserIndex++;
+    showUser();
+  }
+});
+
+window.onload = fetchUsers;

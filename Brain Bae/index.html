@@ -1,29 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Partner Swipe</title>
-    <link rel="stylesheet" href="style.css">
-
-    <!-- ✅ Load Firebase SDK First -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
-
-
-    <!-- ✅ Then Load Firebase Configuration -->
-    <script src="firebase.js"></script>
-
-    <!-- ✅ Then Load Swipe Logic -->
-    <script src="swipe.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Partner Finder</title>
+  <link rel="stylesheet" href="style.css">
+  
 </head>
 <body>
-    <div class="app">
-        <div id="card-container">Loading users...</div>
-        <div class="buttons">
-            <button id="dislike">👎 Dislike</button>
-            <button id="like">👍 Like</button>
-        </div>
+  <div id="app">
+    <div id="card-container"></div>
+    <div id="actions">
+      <button id="dislike">👎</button>
+      <button id="like">👍</button>
     </div>
+  </div>
+
+  <!-- Add type="module" to your script tags -->
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="swipe.js"></script>
 </body>
 </html>

@@ -1,26 +1,21 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-// ✅ Ensure Firebase SDK is Loaded
-if (typeof firebase === "undefined") {
-    console.error("Firebase SDK not loaded! Check your <script> order in index.html.");
-}
+import { initializeApp } from "./firebase/app";
+import { getFirestore } from "./firebase/firestore";
+
 const firebaseConfig = {
-    apiKey: "AIzaSyCb92Q_Kv2OPSsEbYBxe8otpf8PAngQ9uw",
-    authDomain: "brainbae-f3c56.firebaseapp.com",
-    projectId: "brainbae-f3c56",
-    storageBucket: "brainbae-f3c56.firebasestorage.app",
-    messagingSenderId: "548435921667",
-    appId: "1:548435921667:web:fc85376745bd8dd4c37736",
-    measurementId: "G-060KZWZ23R"
-  };
+    apiKey: "AIzaSyC1y78P5Fxxxxxxxxxxxxxx",
+    authDomain: "project.firebaseapp.com",
+    projectId: "project id",
+    storageBucket: "name.appspot.com",
+    messagingSenderId: "107238745226",
+    appId: "1:107238745226:web:3dd6331c633ebd7b5af973",
+    measurementId: "G-XSYWCPWR0F"
+};
 
-  // Initialize Firebase
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// ✅ Initialize Firebase
+const db = getFirestore(app);
 
-let db;
-// ✅ Initialize Firestore
-db = firebase.firestore();
+export { db };
 
 // ✅ Function to Fetch Users from Firestore
 function fetchUsersFromFirebase(callback) {
