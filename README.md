@@ -1,31 +1,34 @@
-# [Project Name] 🎯
+# Brain Bae 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: N2G
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: Nandana Boby - SCMS School of Engineering and Technology
+- Member 2: P Gopika Vaishnavi - SCMS School of Engineering and Technology
 
 ### Hosted Project Link
 [mention your project hosted project link here]
 
 ### Project Description
-[2-3 lines about what your project does]
-
+Brain Bae is an innovative web application to help students find like-minded peers for academic collaboration.In this fast-paced academic world,it is challenging to study effectively alone.Brain Bae solves this by matching students based on their courses,study habits and preferences.
+Users create profiles with their academic interests, subjects,study times and methods.The app uses an intelligent matching algorithm to suggest potential study partners.Once matched,students can message each other and schedule study sessions.
+Benefits:
+-Connects students globally,enabling diverse academic collabortion
+-helps improve academic performance by encouraging effective study partnerships
+-Fosters knowledge exchange across different fields of study,enhancing learning outcomes.
 ### The Problem statement
-[What ridiculous problem are you solving?]
-
+Students often struggle to find compatible study partners,limiting collaboration and knowledge exchange.Traditional methods are restricted to local networks,reducing networks efficinecy.Brain Bae solves this by 
+matching students based on their courses,study habits and preferences,fostering effective academic collaboration and improved learning outcomes.
 ### The Solution
-[How are you solving it? Keep it fun!]
+By creating an web application which bring like-minded students together from all over the world for collaborative study session.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
+- Java script,html,css,
 - [Frameworks used]
 - [Libraries used]
 - [Tools used]
