@@ -8,6 +8,35 @@ body {
   background: linear-gradient(135deg, #2C3E50, #4CA1AF);
   color: #333;
 }
+ /* App Name Background - Brain */
+ body::before {
+  content: 'Brain';
+  position: absolute;
+  left: 50px; /* Position on the left side */
+  top: 50%;
+  transform: translateY(-50%) rotate(-360deg); /* Rotate sideways */
+  font-family: 'Exo 2', serif;
+  font-size: 80px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.1); /* Very light color for subtlety */
+  z-index: 1;
+  pointer-events: none; /* Ensure it doesn't interfere with clicks */
+}
+
+/* App Name Background - Bae */
+body::after {
+  content: 'Bae';
+  position: absolute;
+  right: 50px; /* Position on the right side */
+  top: 50%;
+  transform: translateY(-50%) rotate(-360deg); /* Rotate sideways */
+  font-family: 'Exo 2', serif;
+  font-size: 80px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.1); /* Very light color for subtlety */
+  z-index: 1;
+  pointer-events: none; /* Ensure it doesn't interfere with clicks */
+}
 
 /* App Container */
 #app {
@@ -39,6 +68,7 @@ body {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 /* Gradient Overlay for Card */
 #card-container::before {
