@@ -14,24 +14,30 @@
 
 ### Project Description
 Brain Bae is an innovative web application to help students find like-minded peers for academic collaboration.In this fast-paced academic world,it is challenging to study effectively alone.Brain Bae solves this by matching students based on their courses,study habits and preferences.
-Users create profiles with their academic interests, subjects,study times and methods.The app uses an intelligent matching algorithm to suggest potential study partners.Once matched,students can message each other and schedule study sessions.
+Users create profiles with their academic interests, subjects,and their field of expertise.The app uses an intelligent matching algorithm to suggest potential study partners.Once matched,students can message each other and schedule study sessions.
 Benefits:
 -Connects students globally,enabling diverse academic collabortion
 -helps improve academic performance by encouraging effective study partnerships
 -Fosters knowledge exchange across different fields of study,enhancing learning outcomes.
+
 ### The Problem statement
-Students often struggle to find compatible study partners,limiting collaboration and knowledge exchange.Traditional methods are restricted to local networks,reducing networks efficinecy.Brain Bae solves this by 
-matching students based on their courses,study habits and preferences,fostering effective academic collaboration and improved learning outcomes.
+Students often struggle to find compatible study partners,limiting collaboration and knowledge exchange.Traditional methods are restricted to local networks,reducing networks efficinecy.
+
 ### The Solution
-By creating an web application which bring like-minded students together from all over the world for collaborative study session.
+Brain Bae solves this by matching students based on their courses,study habits and preferences,fostering effective academic collaboration and improved learning outcomes.
+By creating a web application which bring like-minded students together from all over the world for collaborative study session. In addition improves and makes it easier for networking one-on-one.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- Java script,html,css,
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- Java script, html, css, firebase
+- Firebase-Firestore, Vanilla JavaScript, HTML + CSS, Web APIs
+- Firebase initialization, Firestore Database(store and fetch data), Vanilla JS for UI and Events
+-  ✩ Firebase Firestore	Storing user data, matches, and chats.
+   ✩ Firebase SDK v10	Connecting frontend to Firestore.
+   ✩ Vanilla JavaScript	UI interactions (swiping, clicking, chat interface).
+   ✩ HTML & CSS	Creating and styling UI elements.
+   ✩ Browser DevTools	Debugging & performance monitoring.
 
 For Hardware:
 - [List main components]
@@ -50,14 +56,12 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot1]
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot2]
+
+![Screenshot3]
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
@@ -94,8 +98,8 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
+- Nandana Boby: Backend
+- P Gopika Vaishnavi: Front-end
 - [Name 3]: [Specific contributions]
 
 ---
