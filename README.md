@@ -10,7 +10,8 @@
 - Member 2: P Gopika Vaishnavi - SCMS School of Engineering and Technology
 
 ### Hosted Project Link
-[mention your project hosted project link here]
+[Hosted link](https://n2-g.vercel.app/)
+
 
 ### Project Description
 Brain Bae is an innovative web application to help students find like-minded peers for academic collaboration.In this fast-paced academic world,it is challenging to study effectively alone.Brain Bae solves this by matching students based on their courses,study habits and preferences.
