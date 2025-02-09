@@ -54,6 +54,13 @@
       collection(db, "chats", `${partnerId}_${localStorage.getItem("userId")}`, "messages"),
       orderBy("timestamp")
     );
+    /* JavaScript to clear input field after sending message */
+    document.getElementById('send-button').addEventListener('click', function() {
+    setTimeout(() => {
+    document.getElementById('message-input').value = '';
+  }, 200);
+});
+
 
     onSnapshot(messagesQuery, (snapshot) => {
       messagesContainer.innerHTML = "";
