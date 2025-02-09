@@ -53,14 +53,51 @@ document.getElementById("like").addEventListener("click", () => {
     }
   });
 
-// Dislike button event listener
-document.getElementById("dislike").addEventListener("click", () => {
+
+// Function to Show Popup Message
+const showPopup = (message, callback = null) => {
+  const popup = document.getElementById("popup");
+  const popupMessage = document.getElementById("popup-message");
+
+  popupMessage.innerText = message;
+  popup.style.display = "block";
+
+  // If a callback function is provided, execute it after 8 seconds
+  if (callback) {
+    setTimeout(callback, 8000); // 8 seconds delay
+  }
+};
+
+// Close Popup Event
+document.getElementById("popup-close").addEventListener("click", () => {
+  document.getElementById("popup").style.display = "none";
+});
+
+// Like Button Event Listener (Accept)
+document.getElementById("like").addEventListener("click", () => {
   if (currentUserIndex < users.length) {
-    alert(`You disliked ${users[currentUserIndex].name}`);
-    currentUserIndex++;
-    showUser();
+    const selectedUser = users[currentUserIndex];
+
+    // Store the selected user's data in localStorage
+    localStorage.setItem("selectedUserId", selectedUser.id);
+    localStorage.setItem("selectedUserName", selectedUser.name);
+
+    // Show popup with an 8-second delay before redirecting
+    showPopup(`You accepted ${selectedUser.name}! Starting chat in 8 seconds...`, () => {
+      window.location.href = `chat.html?partnerId=${selectedUser.id}&partnerName=${selectedUser.name}`;
+    });
   }
 });
+
+// Dislike Button Event Listener (Decline)
+document.getElementById("dislike").addEventListener("click", () => {
+  if (currentUserIndex < users.length) {
+    showPopup(`You declined ${users[currentUserIndex].name}.`);
+    currentUserIndex++;
+    setTimeout(showUser, 1000); // Show next user after 1 second
+  }
+});
+
 
 // Fetch users when the page loads
 window.onload = fetchUsers;
