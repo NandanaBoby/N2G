@@ -1,10 +1,11 @@
-let users = []; // Array to store fetched users
-let currentUserIndex = 0; // Index of the current user being displayed
+let users = [];
+let currentUserIndex = 0;
 
 // Fetch users from Firestore
 const fetchUsers = async () => {
   try {
-    const snapshot = await db.collection("users").get(); // Ensure `db` is a Firestore instance
+    const usersCollection = collection(db, "users");
+    const snapshot = await getDocs(usersCollection);
     users = snapshot.docs.map((doc) => doc.data());
     showUser();
   } catch (error) {
@@ -28,8 +29,8 @@ const showUser = () => {
     `;
   } else {
     cardContainer.innerHTML = "<p>No more users to show.</p>";
-    document.getElementById("like").disabled = true; // Disable like button
-    document.getElementById("dislike").disabled = true; // Disable dislike button
+    document.getElementById("like").disabled = true;
+    document.getElementById("dislike").disabled = true;
   }
 };
 
@@ -50,6 +51,6 @@ document.getElementById("dislike").addEventListener("click", () => {
     showUser();
   }
 });
-console.log("Firestore instance:", db);
+
 // Fetch users when the page loads
 window.onload = fetchUsers;
