@@ -1,5 +1,9 @@
+
 let users = [];
 let currentUserIndex = 0;
+
+
+
 
 // Fetch users from Firestore
 const fetchUsers = async () => {
@@ -35,13 +39,19 @@ const showUser = () => {
 };
 
 // Like button event listener
+// Like button event listener
 document.getElementById("like").addEventListener("click", () => {
-  if (currentUserIndex < users.length) {
-    alert(`You liked ${users[currentUserIndex].name}`);
-    currentUserIndex++;
-    showUser();
-  }
-});
+    if (currentUserIndex < users.length) {
+      const selectedUser = users[currentUserIndex];
+  
+      // Store the selected user's data in localStorage
+      localStorage.setItem("selectedUserId", selectedUser.id);
+      localStorage.setItem("selectedUserName", selectedUser.name);
+  
+      // Navigate to the chat page
+      window.location.href = `chat.html?partnerId=${selectedUser.id}&partnerName=${selectedUser.name}`;
+    }
+  });
 
 // Dislike button event listener
 document.getElementById("dislike").addEventListener("click", () => {

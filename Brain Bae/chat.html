@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="chat-container">
+    <h2>Chat with <span id="chat-partner-name"></span></h2>
+    <div id="messages"></div>
+    <input type="text" id="message-input" placeholder="Type a message...">
+    <button id="send-button">Send</button>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+
+    // Replace with your Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyC1y78P5Fxxxxxxxxxxxxxx",
+      authDomain: "project.firebaseapp.com",
+      projectId: "project id",
+      storageBucket: "name.appspot.com",
+      messagingSenderId: "107238745226",
+      appId: "1:107238745226:web:3dd6331c633ebd7b5af973",
+      measurementId: "G-XSYWCPWR0F"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Get the selected user's ID from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const partnerId = urlParams.get("partnerId");
+    const partnerName = urlParams.get("partnerName");
+
+    // Display the partner's name
+    document.getElementById("chat-partner-name").textContent = partnerName;
+
+    // Fetch and display messages
+    const messagesContainer = document.getElementById("messages");
+    const messagesQuery = query(
+      collection(db, "chats", `${partnerId}_${localStorage.getItem("userId")}`, "messages"),
+      orderBy("timestamp")
+    );
+
+    onSnapshot(messagesQuery, (snapshot) => {
+      messagesContainer.innerHTML = "";
+      snapshot.forEach((doc) => {
+        const message = doc.data();
+        const messageElement = document.createElement("div");
+        messageElement.textContent = `${message.sender}: ${message.text}`;
+        messagesContainer.appendChild(messageElement);
+      });
+    });
+
+    // Send a message
+    const messageInput = document.getElementById("message-input");
+    const sendButton = document.getElementById("send-button");
+
+    sendButton.addEventListener("click", async () => {
+      const messageText = messageInput.value.trim();
+      if (messageText) {
+        await addDoc(collection(db, "chats", `${partnerId}_${localStorage.getItem("userId")}`, "messages"), {
+          text: messageText,
+          sender: localStorage.getItem("userName"),
+          timestamp: new Date(),
+        });
+        messageInput.value = "";
+      }
+    });
+  </script>
+</body>
+</html>
