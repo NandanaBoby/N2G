@@ -56,12 +56,13 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1]
+![Screenshot 1](Media/SS1.png)
 
 
-![Screenshot2]
+![Screenshot 2](Media/SS2.png)
 
-![Screenshot3]
+
+![Screenshot3](Media/SS3.png)
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
@@ -91,16 +92,20 @@ For Hardware:
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+[![Watch the Video](Media/ui1.png)](Media/video.mp4)
+
+Shows a user with their name, age, skills, and the field of their expertise.
+When we decline, it shows a popup message and shows the next available user
+Once we accept, it gets redirected to a chat page, where you both can discuss on being study partners and fix on a meetup time.
 
 # Additional Demos
-[Add any extra demo materials/links]
+![Demo 1](Media/ui2.png)
+![Demo 2](Media/ui3.png)
 
 ## Team Contributions
 - Nandana Boby: Backend
 - P Gopika Vaishnavi: Front-end
-- [Name 3]: [Specific contributions]
+
 
 ---
 Made with ❤️ at TinkerHub
