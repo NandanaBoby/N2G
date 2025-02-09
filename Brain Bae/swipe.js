@@ -25,7 +25,7 @@ const showUser = () => {
     const user = users[currentUserIndex];
     cardContainer.innerHTML = `
       <div class="card">
-        <h2>${user.name}</h2>
+        <h1>${user.name}</h1>
         <p><strong>Skills:</strong> ${user.skills}</p>
         <p><strong>Age:</strong> ${user.age}</p>
         <p><strong>Expertise:</strong> ${user.expertise}</p>

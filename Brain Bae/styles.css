@@ -5,7 +5,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background: linear-gradient(135deg, #2C3E50, #4CA1AF);
+  background: linear-gradient(135deg, #3E1E68, #A844A1, #4CA1AF, #2C3E50);
   color: #333;
 }
  /* App Name Background - Brain */
@@ -16,7 +16,7 @@ body {
   top: 50%;
   transform: translateY(-50%) rotate(-360deg); /* Rotate sideways */
   font-family: 'Exo 2', serif;
-  font-size: 80px;
+  font-size: 100px;
   font-weight: bold;
   color: rgba(255, 255, 255, 0.1); /* Very light color for subtlety */
   z-index: 1;
@@ -31,7 +31,7 @@ body::after {
   top: 50%;
   transform: translateY(-50%) rotate(-360deg); /* Rotate sideways */
   font-family: 'Exo 2', serif;
-  font-size: 80px;
+  font-size: 100px;
   font-weight: bold;
   color: rgba(255, 255, 255, 0.1); /* Very light color for subtlety */
   z-index: 1;
@@ -61,8 +61,13 @@ body::after {
   border-radius: 10px;
   margin-bottom: 20px;
   background-color: #fff;
-  font-family: 'Lora', serif;
-  font-weight: 400; /* Lighter font weight for elegance */
+  font-family: 'Pacifico', cursive;
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 20px rgba(255, 255, 255, 0.1); /* Soft glow */
   position: relative;
   overflow: hidden;
@@ -242,4 +247,14 @@ body::after {
 #send-button:hover {
   background-color: darkgreen;
   transform: scale(1.1);
+}
+footer {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 14px;
+  text-align:left;
+  padding: 15px;
+  color: white;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
