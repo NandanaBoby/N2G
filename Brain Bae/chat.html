@@ -68,7 +68,7 @@
       if (messageText) {
         await addDoc(collection(db, "chats", `${partnerId}_${localStorage.getItem("userId")}`, "messages"), {
           text: messageText,
-          sender: localStorage.getItem("userName"),
+          sender: localStorage.getItem("name"),
           timestamp: new Date(),
         });
         messageInput.value = "";
